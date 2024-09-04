@@ -23,18 +23,18 @@ function LoginPage() {
             alt="Example"
             className="absolute w-221.91px h-49.63px top-16 left-1/2 transform -translate-x-1/2 tab:top-20px tab:left-119px lap:top-43px lap:left-156px"
           />
-          <div className="absolute hidden lap:block py-26px pl-26px pr-100px border-1px border-gray-100/45 w-510px h-[324px] rounded-10px top-295px">
-            {/* <div className="tab:block flex flex-col justify-center text-white">
-              <h1 className="text-20px lap:text-34px font-600 leading-42.05px mb-4 font-sans">
+          <div className="hidden tab:block absolute tab:border-[0px] lap:border-1px tab:px-0 tab:py-0 lap:py-26px lap:pl-26px lap:pr-100px  border-gray-100/45 lap:w-510px h-[324px] rounded-10px top-[102px] lap:top-295px">
+            <div className="tab:block flex flex-col justify-center text-white tab:w-384px ">
+              <h1 className="text-20px lap:text-36px font-600 leading-24.74px lap:leading-42.05px mb-4 font-sans ">
                 Introducing the Smartest Construction Communication Platform
               </h1>
-              <p className="text-15px font-400 leading-20px font-sans">
+              <p className="text-15px font-400 leading-20px font-sans w-307px">
                 NextPort is a platform that enables homebuilders to share real-time
                 construction updates with their customers.
               </p>
-            </div> */}
+            </div>
           </div>
-          <div className="hidden tab:block absolute tab:top-102px lap:top-314px lap:left-71px tab:w-384px flex flex-col justify-center text-white">
+          {/* <div className="hidden tab:block absolute tab:top-102px lap:top-314px lap:left-71px tab:w-384px flex flex-col justify-center text-white">
             <h1 className="text-20px lap:text-34px font-600 leading-24.74px lap:leading-42.05px mb-4 font-sans">
               Introducing the Smartest Construction Communication Platform
             </h1>
@@ -42,7 +42,7 @@ function LoginPage() {
               NextPort is a platform that enables homebuilders to share real-time
               construction updates with their customers.
             </p>
-          </div>
+          </div> */}
           <div className="hidden tab:block lap:hidden absolute bottom-23px right-23px">
             <Icons />
           </div>
