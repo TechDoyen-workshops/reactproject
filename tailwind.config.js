@@ -4,13 +4,13 @@ module.exports = {
     './src/**/*.{js,jsx,ts,tsx}', // Adjust this path according to your project structure
   ],
   theme: {
-    screens: {
-      'ph': '300px',
-      'tab': '500px',
-      'lap': '1191px',
-      'com': '1255px',
-    },
     extend: {
+      backgroundImage: {
+        'custom': "url('/src/assets/image11.png')",
+      },
+      backgroundPosition: {
+        'custom-pos': '0% 33%',
+      },
       spacing: {
         '2.5': '0.625rem', // Conversion for m-2.5
         '23px': '23px',

@@ -1,31 +1,26 @@
 import React from 'react';
-import bgImage from '../assets/image11.png';
 import logo from '../assets/Group 6860.png';
-import Icons from './whiteIcons';
-import BIcons from './BlackIcons';
+import Icons from './SocialMediaIcons';
+
 
 function LoginPage() {
   return (
-    <div className="flex min-h-screen justify-center w-screen lap:max-w-[1440px] lap:mx-auto lap:items-center">
-      <div className="relative flex flex-col lap:flex-row w-full ">
+    <div className="flex min-h-screen justify-center w-screen xl:max-w-[1440px] xl:mx-auto xl:items-center">
+      <div className="relative flex flex-col xl:flex-row w-full ">
 
         {/* leftside */}
         <div
-          className="relative lap:m-2.5 w-full lap:w-602px lap:h-[870px] h-[135px] tab:h-[296px] rounded-none lap:rounded-md bg-no-repeat bg-cover lap:p-46px tab:p-23px"
-          style={{
-            backgroundImage: `url(${bgImage})`,
-            backgroundPosition: '0% 33%',
-          }}
+          className="relative bg-custom bg-custom-pos xl:m-2.5 w-full xl:w-602px xl:h-[870px] h-[135px] md:h-[296px] rounded-none xl:rounded-md bg-no-repeat bg-cover xl:p-46px md:p-23px"
         >
-          <div className="absolute inset-0 bg-black opacity-50 rounded-none lap:rounded-md"></div>
+          <div className="absolute inset-0 bg-black opacity-50 rounded-none xl:rounded-md"></div>
           <img
             src={logo}
             alt="Example"
-            className="absolute w-221.91px h-49.63px top-16 left-1/2 transform -translate-x-1/2 tab:top-20px tab:left-119px lap:top-43px lap:left-156px"
+            className="absolute w-221.91px h-49.63px top-16 left-1/2 transform -translate-x-1/2 md:top-20px md:left-119px xl:top-43px xl:left-156px"
           />
-          <div className="hidden tab:block absolute tab:border-[0px] lap:border-1px tab:px-0 tab:py-0 lap:py-26px lap:pl-26px lap:pr-100px  border-gray-100/45 lap:w-510px h-[324px] rounded-10px top-[102px] lap:top-295px">
-            <div className="tab:block flex flex-col justify-center text-white tab:w-384px ">
-              <h1 className="text-20px lap:text-36px font-600 leading-24.74px lap:leading-42.05px mb-4 font-sans ">
+          <div className="hidden md:block absolute md:border-[0px] xl:border-1px md:px-0 md:py-0 xl:py-26px xl:pl-26px xl:pr-100px  border-gray-100/45 xl:w-510px h-[324px] rounded-10px top-[102px] xl:top-295px">
+            <div className="md:block flex flex-col justify-center text-white md:w-384px ">
+              <h1 className="text-20px xl:text-36px font-600 leading-24.74px xl:leading-42.05px mb-4 font-sans ">
                 Introducing the Smartest Construction Communication Platform
               </h1>
               <p className="text-15px font-400 leading-20px font-sans w-307px">
@@ -34,8 +29,8 @@ function LoginPage() {
               </p>
             </div>
           </div>
-          {/* <div className="hidden tab:block absolute tab:top-102px lap:top-314px lap:left-71px tab:w-384px flex flex-col justify-center text-white">
-            <h1 className="text-20px lap:text-34px font-600 leading-24.74px lap:leading-42.05px mb-4 font-sans">
+          {/* <div className="hidden md:block absolute md:top-102px xl:top-314px xl:left-71px md:w-384px flex flex-col justify-center text-white">
+            <h1 className="text-20px xl:text-34px font-600 leading-24.74px xl:leading-42.05px mb-4 font-sans">
               Introducing the Smartest Construction Communication Platform
             </h1>
             <p className="text-15px font-400 leading-20px font-sans w-307px">
@@ -43,12 +38,12 @@ function LoginPage() {
               construction updates with their customers.
             </p>
           </div> */}
-          <div className="hidden tab:block lap:hidden absolute bottom-23px right-23px">
+          <div className="hidden md:block xl:hidden absolute bottom-23px right-23px">
             <Icons />
           </div>
 
-          <div className="hidden lap:block">
-            <div className="lap:w-510px absolute flex justify-between mx-auto tab:top-262px lap:top-814px">
+          <div className="hidden xl:block">
+            <div className="xl:w-510px absolute flex justify-between mx-auto md:top-262px xl:top-814px">
               <Icons />
               <p className="text-white font-sans text-15px font-400 leading-20px">
                 © Copyright NEXTPORT - All Rights Reserved
@@ -58,8 +53,8 @@ function LoginPage() {
         </div>
 
         {/* rightside */}
-        <div className="flex flex-col p-4 mt-4 w-full tab:w-500px mx-auto lap:mt-283px lap:p-0">
-          <h2 className="text-2xl lap:text-3xl leading-7 font-semibold font-sans mb-2">
+        <div className="flex flex-col p-4 mt-4 w-full md:w-500px mx-auto xl:mt-283px xl:p-0">
+          <h2 className="text-2xl xl:text-3xl leading-7 font-semibold font-sans mb-2">
             Sign in to your account
           </h2>
           <h2 className="text-gray-600 font-normal text-sm mb-4">
@@ -71,7 +66,7 @@ function LoginPage() {
                 <input
                   placeholder=" "
                   type="text"
-                  className="w-full tab:w-466px h-10 peer placeholder-transparent text-black border border-gray-300 py-2 px-3 text-sm font-normal focus:border-blue-500 focus:outline-none transition-colors duration-150"
+                  className="w-full md:w-466px h-10 peer placeholder-transparent text-black border border-gray-300 py-2 px-3 text-sm font-normal focus:border-blue-500 focus:outline-none transition-colors duration-150"
                 />
                 <label className="absolute left-3 text-sm font-normal text-gray-500 top-1/2 transform -translate-y-1/2 bg-white px-1 transition-transform duration-100 ease-out origin-left peer-placeholder-shown:top-1/2 peer-placeholder-shown:scale-100 peer-focus:top-0 peer-focus:scale-90">
                   User Name*
@@ -82,13 +77,13 @@ function LoginPage() {
                 <input
                   placeholder=" "
                   type="password"
-                  className="w-full tab:w-466px h-10 peer placeholder-transparent text-black border border-gray-300 py-2 px-3 text-sm font-normal focus:border-blue-500 focus:outline-none transition-colors duration-150"
+                  className="w-full md:w-466px h-10 peer placeholder-transparent text-black border border-gray-300 py-2 px-3 text-sm font-normal focus:border-blue-500 focus:outline-none transition-colors duration-150"
                 />
                 <label className="absolute left-3 text-sm font-normal text-gray-500 top-1/2 transform -translate-y-1/2 bg-white px-1 transition-transform duration-100 ease-out origin-left peer-placeholder-shown:top-1/2 peer-placeholder-shown:scale-100 peer-focus:top-0 peer-focus:scale-90">
                   Password*
                 </label>
               </div>
-              <div className="flex items-center justify-between mt-4 tab:w-466px">
+              <div className="flex items-center justify-between mt-4 md:w-466px">
                 <div className="flex items-center">
                   <input
                     type="checkbox"
@@ -106,24 +101,24 @@ function LoginPage() {
             </div>
             <button
               type="submit"
-              className="w-full tab:w-466px h-10 bg-[#1F87C9] text-white rounded mt-4"
+              className="w-full md:w-466px h-10 bg-[#1F87C9] text-white rounded mt-4"
             >
               Sign In
             </button>
           </form>
-          <div className="mt-50px tab:mt-314px">
-            <div className="lap:w-510px flex flex-col tab:top-262px lap:top-814px">
-              <p className="block lap:hidden text-black text-center font-sans text-15px font-400 leading-20px">
+          <div className="mt-50px md:mt-314px">
+            <div className="xl:w-510px flex flex-col md:top-262px xl:top-814px">
+              <p className="block xl:hidden text-black text-center font-sans text-15px font-400 leading-20px">
                 © Copyright NEXTPORT - All Rights Reserved
               </p>
-              <div className="mx-auto tab:hidden mt-10px">
-                <BIcons />
+              <div className="mx-auto md:hidden mt-10px ">
+                <Icons />
               </div>
             </div>
           </div>
         </div>
-        <div className='absolute lap:w-259px h-[36px] flex justify-between  tab:gap-[12px] top-[15px] right-[12px] tab:top-[31px] tab:right-[26px]  lap:top-[19px] lap:right-[26px]  '>
-          <h2 className='hidden tab:block w-147.31px font-sans font-[100] text-[15px] tab:text-white lap:text-black leading-[20.43px] mt-[7px] '>Don’t have an account?</h2>
+        <div className='absolute xl:w-259px h-[36px] flex justify-between  md:gap-[12px] top-[15px] right-[12px] md:top-[31px] md:right-[26px]  xl:top-[19px] xl:right-[26px]  '>
+          <h2 className='hidden md:block w-147.31px font-sans font-[100] text-[15px] md:text-white xl:text-black leading-[20.43px] mt-[7px] '>Don’t have an account?</h2>
           <button className='w-79px  h-[36px] border-[1px] border-[#1F87C9] hover:bg-[#1F87C9] text-[#1F87C9] bg-white hover:text-white rounded-[5px] font-sans font-[600] text-[14px] leading-[21px] text-center'>Sign up</button>
         </div>
       </div>
