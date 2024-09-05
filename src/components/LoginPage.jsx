@@ -10,9 +10,9 @@ function LoginPage() {
 
         {/* leftside */}
         <div
-          className="relative bg-custom bg-custom-pos xl:m-2.5 w-full xl:w-602px xl:h-[870px] h-[135px] sm:h-[296px] rounded-none xl:rounded-sm bg-no-repeat bg-cover xl:p-46px sm:p-23px"
+          className="relative bg-custom bg-custom-pos xl:m-2.5 w-full xl:w-602px xl:h-[870px] h-[135px] sm:h-[296px] rounded-none xl:rounded-md bg-no-repeat bg-cover xl:p-46px sm:p-23px"
         >
-          <div className="absolute inset-0 bg-black opacity-50 rounded-none xl:rounded-sm"></div>
+          <div className="absolute inset-0 bg-black opacity-50 rounded-none xl:rounded-md"></div>
           <img
             src={logo}
             alt="Example"
