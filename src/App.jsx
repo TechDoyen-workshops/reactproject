@@ -1,14 +1,15 @@
-
-import React from 'react';
-
-import LoginPage from './components/LoginPage';
-
+\
+// export default App;
+import React from 'react'
+// import LoginPage from './components/LoginPage'
+import Dashboard from './components/Dashboard'
 function App() {
   return (
-    <div className="App">
-      <LoginPage />
+    <div>
+       {/* <LoginPage /> */}
+     <Dashboard/>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
