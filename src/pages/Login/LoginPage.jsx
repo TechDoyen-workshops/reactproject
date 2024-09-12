@@ -1,6 +1,6 @@
 import React from 'react';
-import logo from '../assets/Group 6860.png';
-import Icons from './SocialMediaIcons';
+import logo from '../../assets/Group 6860.png';
+import Icons from './components/SocialMediaIcons';
 
 
 function LoginPage() {
