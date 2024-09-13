@@ -32,7 +32,7 @@ function sidebar() {
             <div className='flex flex-col justify-between mt-[19px] h-[726px]'>
             
 
-              <Link to='/Maincontent' className="group">
+              <Link to="/Dashboard" className="group ">
                 <li className=' mx-auto w-[217px] px-[13px] py-2 list-none flex gap-2 rounded-md text-[#676E8B] hover:bg-[#107EC3]   group-hover:text-white'>
                   <img src={dashboard} alt="" className='group-hover:brightness-0 group-hover:invert' />
                   <p className='text-[15px] leading-6 font-bold font-roboto group-hover:text-white'>

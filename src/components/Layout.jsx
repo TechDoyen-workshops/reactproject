@@ -2,7 +2,6 @@ import React from 'react'
 import Sidebar from '../pages/Dashboard/components/Sidebar.jsx'
 import Header from '../pages/Dashboard/components/Header.jsx'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Maincontent from '../pages/Dashboard/Dashboard.jsx';
 import Estimating from '../pages/Dashboard/Estimating.jsx';
 import Projects from '../pages/Dashboard/Projects.jsx';
 import Scheduling from '../pages/Dashboard/Scheduling.jsx';
@@ -17,6 +16,7 @@ import Selections from '../pages/Dashboard/Selections.jsx'
 import Finances from '../pages/Dashboard/Finances.jsx'
 import Subcontractors from '../pages/Dashboard/Subcontractors.jsx'
 import Feedback from '../pages/Dashboard/Feedback.jsx'
+import Dashboard from '../pages/Dashboard/Dashboard.jsx';
 
 
 
@@ -29,7 +29,8 @@ function Layout() {
         <div>
           <Header /> 
               <Routes>
-                <Route path="/Maincontent" element={<Maincontent />} /> 
+                <Route index element={<Dashboard />} />
+                <Route index path="/Dashboard" element={<Dashboard />} /> 
                 <Route path="/Estimating" element={<Estimating />} /> 
                 <Route path="/Projects" element={<Projects />} /> 
                 <Route path="/Scheduling" element={<Scheduling />} /> 
