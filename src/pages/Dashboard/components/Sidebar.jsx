@@ -51,42 +51,42 @@ function sidebar() {
               </Link>
 
 
-              <div className="group">
+              <Link to='/Projects' className="group">
                 <li className='mx-auto w-[217px] px-[13px] py-2 list-none flex gap-2 rounded-md text-[#676E8B] group-hover:bg-[#107EC3] group-hover:text-white'>
                   <img src={Projects} alt="" className='group-hover:brightness-0 group-hover:invert' />
                   <p className='text-[15px] leading-6 font-bold font-roboto group-hover:text-white'>Projects</p>
                 </li>
-              </div>
+              </Link>
 
-              <div className="group">
+              <Link to='/Scheduling' className="group">
                 <li className='mx-auto w-[217px] px-[13px] py-2 list-none flex gap-2 rounded-md text-[#676E8B] group-hover:bg-[#107EC3] group-hover:text-white'>
                   <img src={Scheduling} alt="" className='group-hover:brightness-0 group-hover:invert' />
                   <p className='text-[15px] leading-6 font-bold font-roboto group-hover:text-white'>Scheduling</p>
                 </li>
-              </div>
+              </Link>
 
-              <div className="group">
+              <Link to='/Customers' className="group">
                 <li className='mx-auto w-[217px] px-[13px] py-2 list-none flex gap-2 rounded-md text-[#676E8B] group-hover:bg-[#107EC3] group-hover:text-white'>
                   <img src={Customers} alt="" className='group-hover:brightness-0 group-hover:invert' />
                   <p className='text-[15px] leading-6 font-bold font-roboto group-hover:text-white'>Customers</p>
                 </li>
-              </div>
+              </Link>
 
-              <div className="group">
+              <Link to='/Models' className="group">
                 <li className='mx-auto w-[217px] px-[13px] py-2 list-none flex gap-2 rounded-md text-[#676E8B] group-hover:bg-[#107EC3] group-hover:text-white'>
                   <img src={Models} alt="" className='group-hover:brightness-0 group-hover:invert' />
                   <p className='text-[15px] leading-6 font-bold font-roboto group-hover:text-white'>Models</p>
                 </li>
-              </div>
+              </Link>
 
-              <div className="group">
+              <Link to='/Mytask' className="group">
                 <li className='mx-auto w-[217px] px-[13px] py-2 list-none flex gap-2 rounded-md text-[#676E8B] group-hover:bg-[#107EC3] group-hover:text-white'>
                   <img src={task} alt="" className='group-hover:brightness-0 group-hover:invert' />
                   <p className='text-[15px] leading-6 font-bold font-roboto group-hover:text-white'>My Tasks</p>
                 </li>
-              </div>
+              </Link>
 
-              <div className="group">
+              <Link to='/Todo' className="group">
                 <li className='mx-auto w-[217px] px-[13px] py-2 list-none flex justify-between rounded-md text-[#676E8B] group-hover:bg-[#107EC3] group-hover:text-white'>
                   <div className='flex gap-2'>
                     <img src={todo} alt="" className='group-hover:brightness-0 group-hover:invert' />
@@ -96,60 +96,60 @@ function sidebar() {
                     <span className='text-[11px] text-white font-[600] leading-6 group-hover:text-[#107EC3]'>2</span>
                   </div>
                 </li>
-              </div>
+              </Link>
 
-              <div className="group">
+              <Link to='/Selections' className="group">
                 <li className='mx-auto w-[217px] px-[13px] py-2 list-none flex gap-2 rounded-md text-[#676E8B] group-hover:bg-[#107EC3] group-hover:text-white'>
                   <img src={Selections} alt="" className='group-hover:brightness-0 group-hover:invert' />
                   <p className='text-[15px] leading-6 font-bold font-roboto group-hover:text-white'>Selections</p>
                 </li>
-              </div>
+              </Link>
 
-              <div className="group">
+              <Link to='/Finances'  className="group">
                 <li className='mx-auto w-[217px] px-[13px] py-2 list-none flex gap-2 rounded-md text-[#676E8B] group-hover:bg-[#107EC3] group-hover:text-white'>
                   <img src={Finances} alt="" className='group-hover:brightness-0 group-hover:invert' />
                   <p className='text-[15px] leading-6 font-bold font-roboto group-hover:text-white'>Finances</p>
                 </li>
-              </div>
+              </Link>
 
-              <div className="group">
+              <Link to='/Subcontractors' className="group">
                 <li className='mx-auto w-[217px] px-[13px] py-2 list-none flex gap-2 rounded-md text-[#676E8B] group-hover:bg-[#107EC3] group-hover:text-white'>
                   <img src={subcontract} alt="" className='group-hover:brightness-0 group-hover:invert' />
                   <p className='text-[15px] leading-6 font-bold font-roboto group-hover:text-white'>Sub Contractors</p>
                 </li>
-              </div>
+              </Link>
 
 
-              <div className="group">
+              <Link to='/Feedback' className="group">
                 <li className='mx-auto w-[217px] px-[13px] py-2 list-none flex gap-2 rounded-md text-[#676E8B] group-hover:bg-[#107EC3] group-hover:text-white'>
                   <img src={Feedback} alt="" className='group-hover:brightness-0 group-hover:invert' />
                   <p className='text-[15px] leading-6 font-bold font-roboto group-hover:text-white'>Feedback</p>
                 </li>
-              </div>
+              </Link>
 
 
-              <div className="group">
+              <Link to='/Documents' className="group">
                 <li className='mx-auto w-[217px] px-[13px] py-2 list-none flex gap-2 rounded-md text-[#676E8B] group-hover:bg-[#107EC3] group-hover:text-white'>
                   <img src={Documents} alt="" className='group-hover:brightness-0 group-hover:invert' />
                   <p className='text-[15px] leading-6 font-bold font-roboto group-hover:text-white'>Documents</p>
                 </li>
-              </div>
+              </Link>
 
 
-              <div className="group">
+              <Link to='/Users' className="group">
                 <li className='mx-auto w-[217px] px-[13px] py-2 list-none flex gap-2 rounded-md text-[#676E8B] group-hover:bg-[#107EC3] group-hover:text-white'>
                   <img src={users} alt="" className='group-hover:brightness-0 group-hover:invert' />
                   <p className='text-[15px] leading-6 font-bold font-roboto group-hover:text-white'>Users</p>
                 </li>
-              </div>
+              </Link>
 
 
-              <div className="group">
+              <Link to='/Settings' className="group">
                 <li className='mx-auto w-[217px] px-[13px] py-2 list-none flex gap-2 rounded-md text-[#676E8B] group-hover:bg-[#107EC3] group-hover:text-white'>
                   <img src={Settings} alt="" className='group-hover:brightness-0 group-hover:invert' />
                   <p className='text-[15px] leading-6 font-bold font-roboto group-hover:text-white'>Settings</p>
                 </li>
-              </div>
+              </Link>
 
             </div>
           </div>
