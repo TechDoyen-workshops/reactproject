@@ -1,6 +1,25 @@
 import React from 'react';
 import logo from '../../assets/Group 6860.png';
 import Icons from './components/SocialMediaIcons';
+import axios from 'axios';
+
+
+const registerUser = async () => {
+  try {
+    const response = await axios.post('http://localhost:3001/auth', {
+      action: 'login',
+      email: 'shanu123@example.com',
+      username: 'shanu123',
+      password: 'shanu1234'
+    });
+
+    console.log('Response:', response.data);
+  } catch (error) {
+    console.error('Error registering user:', error);
+  }
+};
+
+
 
 
 function LoginPage() {
@@ -60,7 +79,14 @@ function LoginPage() {
           <h2 className="text-gray-600 font-normal text-sm mb-4">
             Explore our tool.
           </h2>
-          <form>
+
+
+
+
+
+
+
+          <form onSubmit={registerUser()}>
             <div className="mb-4">
               <div className="relative mb-4">
                 <input
@@ -100,7 +126,7 @@ function LoginPage() {
               </div>
             </div>
             <button
-              type="submit"
+              type="submit"  
               className="w-full sm:w-466px h-10 bg-[#1F87C9] text-white rounded mt-4"
             >
               Sign In
