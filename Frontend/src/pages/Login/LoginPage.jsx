@@ -1,28 +1,69 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import logo from '../../assets/Group 6860.png';
 import Icons from './components/SocialMediaIcons';
 import axios from 'axios';
 
 
-const registerUser = async () => {
-  try {
-    const response = await axios.post('http://localhost:3001/auth', {
-      action: 'login',
-      email: 'shanu123@example.com',
-      username: 'shanu123',
-      password: 'shanu1234'
-    });
+// const registerUser = async () => {
+//   try {
+//     // const response = await axios.post('http://localhost:3001/auth', {
+//     //   action: 'register',
+//     //   email: 'shanu123@example.com',
+//     //   username: 'shanu123',
+//     //   password: 'shanu1234'
+//     // });
 
-    console.log('Response:', response.data);
-  } catch (error) {
-    console.error('Error registering user:', error);
-  }
-};
+
+//     const response = await axios.post('http://localhost:3001/auth', {
+//       action: 'login',
+//       email: 'shanu123@example.com',
+//       password: 'shanu1234'
+//     });
+
+//     console.log('Response:', response.data);
+//   } catch (error) {
+//     console.error('Error registering user:', error);
+//   }
+// };
 
 
 
 
 function LoginPage() {
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+
+
+  // Use the useNavigate hook
+  const navigate = useNavigate();
+
+  // Handle form submission
+  const loginUser = async (e) => {
+    e.preventDefault(); // Prevent the default form submission
+
+    try {
+      const response = await axios.post('http://localhost:3001/auth', {
+        action: 'login',
+        email: email,
+        password: password
+      });
+
+      console.log('Response:', response.data);
+      alert('Login successful!');
+
+ // Redirect to the Dashboard
+ navigate('/Layout'); // Navigate to Dashboard route
+
+    } catch (error) {
+      console.error('Error logging in:', error);
+      alert('Password Incorrect');
+    }
+  };
+
+
   return (
     <div className="flex min-h-screen justify-center w-screen xl:max-w-[1440px] xl:mx-auto xl:items-center">
       <div className="relative flex flex-col xl:flex-row w-full ">
@@ -81,17 +122,15 @@ function LoginPage() {
           </h2>
 
 
-
-
-
-
-
-          <form onSubmit={registerUser()}>
+          <form onSubmit={loginUser}>
             <div className="mb-4">
               <div className="relative mb-4">
                 <input
                   placeholder=" "
-                  type="text"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  
                   className="w-full sm:w-466px h-10 peer placeholder-transparent text-black border border-gray-300 py-2 px-3 text-sm font-normal focus:border-blue-500 focus:outline-none transition-colors duration-150"
                 />
                 <label className="absolute left-3 text-sm font-normal text-gray-500 top-1/2 transform -translate-y-1/2 bg-white px-1 transition-transform duration-100 ease-out origin-left peer-placeholder-shown:top-1/2 peer-placeholder-shown:scale-100 peer-focus:top-0 peer-focus:scale-90">
@@ -101,8 +140,11 @@ function LoginPage() {
 
               <div className="relative mb-4">
                 <input
-                  placeholder=" "
-                  type="password"
+                 placeholder=" "
+                 type="password"
+                 value={password}
+                 onChange={(e) => setPassword(e.target.value)}
+                 
                   className="w-full sm:w-466px h-10 peer placeholder-transparent text-black border border-gray-300 py-2 px-3 text-sm font-normal focus:border-blue-500 focus:outline-none transition-colors duration-150"
                 />
                 <label className="absolute left-3 text-sm font-normal text-gray-500 top-1/2 transform -translate-y-1/2 bg-white px-1 transition-transform duration-100 ease-out origin-left peer-placeholder-shown:top-1/2 peer-placeholder-shown:scale-100 peer-focus:top-0 peer-focus:scale-90">

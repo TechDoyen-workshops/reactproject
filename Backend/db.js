@@ -19,10 +19,10 @@ const client = new Client({
   });
 
 // Register new user query
-async function registerUser(username, email, hashedPassword) {
+async function registerUser(username, email, hashedPassword, DOB, phone) {
   const result = await client.query(
-    'INSERT INTO userlogin (username, email, password) VALUES ($1, $2, $3) RETURNING *',
-    [username, email, hashedPassword]
+    'INSERT INTO registration (username, email, password, DOB, phone) VALUES ($1, $2, $3, $4, $5) RETURNING *',
+    [username, email, hashedPassword, DOB, phone]
   );
   return result.rows[0];
 }
@@ -31,21 +31,21 @@ async function registerUser(username, email, hashedPassword) {
 
 
 async function getUserById(id) {
-  const result = await client.query('SELECT email , username , password  FROM userlogin WHERE id = $1 ', [id]);
+  const result = await client.query('SELECT email , username , password , DOB, phone FROM registration WHERE id = $1 ', [id]);
   return result.rows[0];
 }
 
 // Get user by email for login
 async function getUserByEmail(email) {
-  const result = await client.query('SELECT * FROM userlogin WHERE email = $1', [email]);
+  const result = await client.query('SELECT * FROM registration WHERE email = $1', [email]);
   return result.rows[0];
 }
 
 // update the user by id query
-async function updateUserByID(id, email, username, hashedPassword) {
+async function updateUserByID(id, email, username, hashedPassword,  DOB, phone) {
   const result = await client.query(
-    'UPDATE userlogin SET email = $1, username = $2, password = $3 WHERE id = $4 RETURNING *',
-    [email, username, hashedPassword, id]  // Pass all parameters correctly
+    'UPDATE registration SET email = $1, username = $2, password = $3 , DOB =$4, phone =$5 WHERE id = $6 RETURNING *',
+    [email, username, hashedPassword, DOB, phone , id]  // Pass all parameters correctly
   );
   return result.rows[0];
 }
@@ -54,7 +54,7 @@ async function updateUserByID(id, email, username, hashedPassword) {
 // delete the user by id query
 async function deleteUserByID(id) {
     const result = await client.query(
-      'DELETE from  userlogin   WHERE id = $1 RETURNING *',
+      'DELETE from  registration   WHERE id = $1 RETURNING *',
       [id]
     );
     return result.rows[0];
