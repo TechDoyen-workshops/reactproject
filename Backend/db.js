@@ -42,10 +42,10 @@ async function getUserByEmail(email) {
 }
 
 // update the user by id query
-async function updateUserByID(id, email, username, hashedPassword,  DOB, phone) {
+async function updateUserByID(username, dob, number, email) {
   const result = await client.query(
-    'UPDATE registration SET email = $1, username = $2, password = $3 , DOB =$4, phone =$5 WHERE id = $6 RETURNING *',
-    [email, username, hashedPassword, DOB, phone , id]  // Pass all parameters correctly
+    'UPDATE registration SET username = $1, dob = $2, number = $3 WHERE email = $4 RETURNING *',
+    [username, dob, number, email]  // Pass all parameters correctly
   );
   return result.rows[0];
 }

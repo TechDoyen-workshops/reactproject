@@ -160,23 +160,17 @@ app.get("/selectuser/:id", async (req, res) => {
 });
 
 // PUT: Update user by ID
-app.put("/updateuser/:id", async (req, res) => {
-  const { id } = req.params;
-  const { email, username, password, dob, number } = req.body;
+app.post('/updateuser', async (req, res) => {
+  const { username, dob, number, email } = req.body;
 
   try {
-    const hashedPassword = await bcrypt.hash(password, 10);
-    const updatedUser = await db.updateUserByID(
-      id,
-      email,
-      username,
-      hashedPassword,
-      dob,
-      number
-    );
+    // Assuming db.updateUserByID is a function that updates the user by email in the database
+    const updatedUser = await db.updateUserByID(username, dob, number, email);
+
     if (!updatedUser) {
       return res.status(404).json({ message: "User not found or not updated" });
     }
+
     res.status(200).json({
       message: "User updated successfully",
       user: updatedUser,
@@ -186,6 +180,7 @@ app.put("/updateuser/:id", async (req, res) => {
     res.status(500).json({ error: "Server error" });
   }
 });
+
 
 // DELETE: Delete user by ID
 app.delete("/deleteuser/:id", async (req, res) => {
