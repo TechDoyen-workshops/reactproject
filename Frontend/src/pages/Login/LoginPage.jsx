@@ -4,45 +4,14 @@ import logo from '../../assets/Group 6860.png';
 import Icons from './components/SocialMediaIcons';
 import axios from 'axios';
 
-
-// const registerUser = async () => {
-//   try {
-//     // const response = await axios.post('http://localhost:3001/auth', {
-//     //   action: 'register',
-//     //   email: 'shanu123@example.com',
-//     //   username: 'shanu123',
-//     //   password: 'shanu1234'
-//     // });
-
-
-//     const response = await axios.post('http://localhost:3001/auth', {
-//       action: 'login',
-//       email: 'shanu123@example.com',
-//       password: 'shanu1234'
-//     });
-
-//     console.log('Response:', response.data);
-//   } catch (error) {
-//     console.error('Error registering user:', error);
-//   }
-// };
-
-
-
-
 function LoginPage() {
-
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
-
-
-  // Use the useNavigate hook
   const navigate = useNavigate();
 
-  // Handle form submission
+
   const loginUser = async (e) => {
-    e.preventDefault(); // Prevent the default form submission
+    e.preventDefault(); 
 
     try {
       const response = await axios.post('http://localhost:3001/auth', {
@@ -54,14 +23,18 @@ function LoginPage() {
       console.log('Response:', response.data);
       alert('Login successful!');
 
- // Redirect to the Dashboard
- navigate('/Layout'); // Navigate to Dashboard route
+ // Save email to localStorage
+    localStorage.setItem('userEmail', email);
 
+      // Navigate to Layout route and pass email as state
+      navigate('/Layout');
     } catch (error) {
       console.error('Error logging in:', error);
       alert('Password Incorrect');
     }
   };
+
+
 
 
   return (

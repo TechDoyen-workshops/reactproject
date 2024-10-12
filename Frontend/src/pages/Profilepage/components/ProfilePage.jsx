@@ -1,12 +1,19 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import bcrypt from "bcryptjs"; 
+import { useLocation } from 'react-router-dom';
 
-const ProfilePage = () => {
+function ProfilePage() {
   const [username, setUsername] = useState("");
   const [dob, setDob] = useState("");
   const [mobile, setMobile] = useState("");
-  const [email, setEmail] = useState("kiran@example.com"); // Hardcoded email for fetching
+  const [password, setPassword] = useState(""); // New password field
+  const [confirmPassword, setConfirmPassword] = useState(""); // Confirm password field
   const [isEditing, setIsEditing] = useState(false); // Toggle between edit/view mode
+  const [showPasswordFields, setShowPasswordFields] = useState(false); // Toggle password fields visibility
+
+  // Retrieve email from local storage
+  const email = localStorage.getItem('userEmail');
 
   // Fetch user data when the component mounts
   useEffect(() => {
@@ -24,16 +31,33 @@ const ProfilePage = () => {
       }
     };
 
-    fetchUserData();
+    if (email) {
+      fetchUserData();
+    } else {
+      alert("Email not found in local storage.");
+    }
   }, [email]);
 
   const handleSave = async () => {
+    if (password && password !== confirmPassword) {
+      alert("Passwords do not match!");
+      return;
+    }
+
+    let hashedPassword = null;
+    if (password) {
+      // Hash the password using bcrypt before sending it
+      const salt = bcrypt.genSaltSync(10); // Generate salt with 10 rounds
+      hashedPassword = bcrypt.hashSync(password, salt); // Hash the password
+    }
+
     try {
       const response = await axios.post('http://localhost:3001/updateuser', {
         username: username,
         dob: dob,
         number: mobile,
-        email: email, // Include email to identify the user
+        email: email,
+        password: hashedPassword, // Send hashed password if provided
       });
 
       if (response.status === 200) {
@@ -54,6 +78,11 @@ const ProfilePage = () => {
 
   const handleCancel = () => {
     setIsEditing(false); // Cancel edit mode
+    setShowPasswordFields(false); // Hide password fields
+  };
+
+  const togglePasswordFields = () => {
+    setShowPasswordFields(!showPasswordFields); // Toggle password field visibility
   };
 
   return (
@@ -114,7 +143,7 @@ const ProfilePage = () => {
                   <input
                     type="email"
                     value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    readOnly // Make email read-only
                     className="mt-1 px-4 py-2 border rounded-lg w-full text-gray-700 focus:outline-none focus:border-blue-500"
                   />
                 </div>
@@ -139,6 +168,41 @@ const ProfilePage = () => {
                   />
                 </div>
 
+                {/* Change Password Link */}
+                <div className="mb-4">
+                  <button
+                    onClick={togglePasswordFields}
+                    className="text-blue-500 hover:text-blue-700"
+                  >
+                    {showPasswordFields ? "Hide Password Fields" : "Change Password"}
+                  </button>
+                </div>
+
+                {/* Password Fields, visible only if showPasswordFields is true */}
+                {showPasswordFields && (
+                  <>
+                    <div className="mb-4">
+                      <label className="block text-gray-700">New Password</label>
+                      <input
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        className="mt-1 px-4 py-2 border rounded-lg w-full text-gray-700 focus:outline-none focus:border-blue-500"
+                      />
+                    </div>
+
+                    <div className="mb-4">
+                      <label className="block text-gray-700">Confirm Password</label>
+                      <input
+                        type="password"
+                        value={confirmPassword}
+                        onChange={(e) => setConfirmPassword(e.target.value)}
+                        className="mt-1 px-4 py-2 border rounded-lg w-full text-gray-700 focus:outline-none focus:border-blue-500"
+                      />
+                    </div>
+                  </>
+                )}
+
                 <div className="flex gap-4">
                   <button
                     onClick={handleSave}
@@ -156,16 +220,10 @@ const ProfilePage = () => {
               </>
             )}
           </div>
-
-          <div className="mt-6 flex justify-center gap-4">
-            <a href="#" className="text-blue-500 hover:text-blue-700">Twitter</a>
-            <a href="#" className="text-blue-500 hover:text-blue-700">LinkedIn</a>
-            <a href="#" className="text-blue-500 hover:text-blue-700">GitHub</a>
-          </div>
         </div>
       </div>
     </div>
   );
-};
+}
 
 export default ProfilePage;

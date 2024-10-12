@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Sidebar from '../pages/Dashboard/components/Sidebar.jsx';
 import Header from '../pages/Dashboard/components/Header.jsx';
 import { Routes, Route } from 'react-router-dom';
@@ -18,13 +18,26 @@ import Subcontractors from '../pages/Dashboard/Subcontractors.jsx';
 import Feedback from '../pages/Dashboard/Feedback.jsx';
 import Dashboard from '../pages/Dashboard/Dashboard.jsx';
 
+
+
 function Layout() {
+  
+  const [email, setEmail] = useState('');
+
+  useEffect(() => {
+    const savedEmail = localStorage.getItem('userEmail');
+    if (savedEmail) {
+      setEmail(savedEmail);  // Save the email from localStorage to state
+    }
+  }, []);
+  
   return (
     <div className='flex items-center justify-center min-h-screen font-roboto'>
       <div className="flex w-[1440px] h-[900px] mx-auto py-[15px] pl-[30px] bg-[#F7F7FA]">
         <Sidebar />
         <div>
-          <Header />
+          <Header email={email} />
+          
           <Routes>
             <Route index element={<Dashboard />} />
             <Route path="/Dashboard" element={<Dashboard />} />
